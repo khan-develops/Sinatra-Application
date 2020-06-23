@@ -4,3 +4,13 @@
 <% @user.tweets.each do |tweet| %>
     <%= tweet.name %>
 <% end %>
+
+<% if Helpers.is_logged_in?(session) %>
+    <% if Helpers.current_user(session).id == @user.id %>
+        <p>You are logged in and <a href="/logout">Sign Out Here</a></p>
+    <% else %>
+        <p>Your not logged in</p>
+    <% end %>
+<% else%>
+    <p>No User Logged In</p>
+<% end %>
