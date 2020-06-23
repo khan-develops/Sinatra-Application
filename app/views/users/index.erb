@@ -1,3 +1,6 @@
-<% @users.each do |user| %>
-    <%= user.username %>
+<h2>Signed Up Users</h2>
+<% User.all.each do |user| %>
+    <ul>
+    <li><h3><%= user.username %></h3></li>
+    </ul>
 <% end %>
