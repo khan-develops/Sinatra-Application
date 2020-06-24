@@ -7,7 +7,7 @@
 
 <% if Helpers.is_logged_in?(session) %>
     <% if Helpers.current_user(session).id == @user.id %>
-        <p>You are logged in and <a href="/logout">Sign Out Here</a></p>
+        <h3>You are logged in and <a href="/logout">Sign Out Here</a></h3>
     <% else %>
         <p>Your not logged in</p>
     <% end %>

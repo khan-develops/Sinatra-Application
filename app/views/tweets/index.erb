@@ -1,10 +1,18 @@
-<h2>Welcome, current user - <%= Helpers.current_user(session).username %></h2>
+<h2>Welcome, - <%= Helpers.current_user(session).username %></h2>
 
-<h3>List of All Tweets</h3>
-<% Tweet.all.each do |tweet| %>
-<ul>
-<li><h3><%= tweet.content %></h3></li>
-</ul>
+<% if !Tweet.all.empty? %>
+    <h3>List of All Tweets</h3>
+    <% Tweet.all.each do |tweet| %>
+    <ul>
+    <li><h3><%= tweet.content %></h3></li>
+    </ul>
+    <% end %>
+<% else %>
+    <h3>Currently, there is no Tweet content.</h3>
+    
 <% end %>
+<br>
+<h3><a href="/tweets/new">Add Tweet Content</a></h3>
+<br>
 
-<a href="/logout">Log Out</a> 
+<h3><a href="/logout">Log Out</a></h3>
