@@ -1,4 +1,5 @@
 <% if @tweet %>
+    <h3>This tweet belongs to <%= User.all.find {|user| user.id == @tweet.user_id}.username %></h3>
     <p><%= @tweet.content %></p>
 
     <br>

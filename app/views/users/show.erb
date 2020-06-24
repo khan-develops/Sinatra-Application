@@ -2,7 +2,7 @@
 
 <h2>Your Tweets</h2>
 <% @user.tweets.each do |tweet| %>
-    <%= tweet.name %>
+    <%= tweet.content %>
 <% end %>
 
 <% if Helpers.is_logged_in?(session) %>

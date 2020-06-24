@@ -4,7 +4,10 @@
     <h3>List of All Tweets</h3>
     <% Tweet.all.each do |tweet| %>
     <ul>
-    <li><h3><%= tweet.content %></h3></li>
+    <li><h3><%= tweet.content %> - This tweet belongs to <% if Helpers.current_user(session).id == tweet.user_id %> <h3>you</h3>
+    <% else %>
+    <%= User.all.find {|user| user.id == tweet.user_id}.username %></h3></li>
+    <% end %>
     </ul>
     <% end %>
 <% else %>
